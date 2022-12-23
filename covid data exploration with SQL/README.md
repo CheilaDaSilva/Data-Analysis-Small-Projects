@@ -7,5 +7,6 @@ Looking at death rates and vaccination rates based on case numbers and populatio
 ## Dataset
 
 Source: Our World In Data 
+
 Dataset was slipt into two datasets to practice joins in SQL and other more compleax queries.
 
