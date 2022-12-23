@@ -1,4 +1,4 @@
-# Covid Data Exploration with SQL
+# 💻 Covid-19 Data Exploration with SQL & Tableau Dashboard
 ![project git banner](https://user-images.githubusercontent.com/88495091/209375767-3b371554-f78b-409d-9956-f1244f22d27b.png)
 
 
