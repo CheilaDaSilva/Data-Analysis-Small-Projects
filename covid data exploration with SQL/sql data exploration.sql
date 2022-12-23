@@ -38,28 +38,37 @@ ORDER BY 1,2
 
 SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as PercentageCasesDeceased
 FROM CovidDeaths
-WHERE location like '%united kingdom%' and continent IS NOT NULL
+-- WHERE continent IS NOT NULL
+WHERE location like '%united kingdom%'
 ORDER BY 1,2
 
 
 -- Total Cases vs Population
--- Percentage of population infected with Covid over time
+-- Percentage of UK population infected with Covid over time
 
 SELECT location, date, population, total_cases, (total_cases/population)*100 as PercentPopulationInfected
 FROM CovidDeaths
-WHERE continent IS NOT NULL
--- WHERE location like '%United Kingdom%'
+-- WHERE continent IS NOT NULL
+WHERE location like '%United Kingdom%'
 ORDER BY 1,2
 
 
 -- Looking at countries with the Highest Infection Rates based on population size
 
-SELECT location, population, MAX(total_cases) AS HighestInfectionCount, (max(total_cases)/population)*100 as PercentPopulationInfected
+SELECT location, population, MAX(total_cases) AS HighestInfectionCount, (MAX(total_cases)/population)*100 as PercentPopulationInfected
 FROM CovidDeaths
 WHERE continent is not null
--- WHERE location like '%United Kingdom%'
 GROUP BY location, population
 ORDER BY PercentPopulationInfected desc
+
+
+-- Looking at countries with the Highest Death Rates based on population size
+
+SELECT location, population, MAX(CAST(total_deaths AS int)) AS HighestDeathCount, (MAX(CAST(total_deaths AS int))/population)*100 as PercentPopulationDeceased
+FROM CovidDeaths
+WHERE continent is not null
+GROUP BY location, population
+ORDER BY PercentPopulationDeceased desc
 
 
 -- Looking at Countries with Highest Death Count
@@ -100,7 +109,6 @@ ORDER BY 1,2
 
 
 -- join our two tables
-
 SELECT * 
 FROM CovidDeaths dea
 JOIN CovidVaccinations vac
@@ -123,7 +131,6 @@ ORDER BY 2,3
 
 -- Using CTEs to use calculated columns with partition by
 
-
 WITH PopvsVac (Continent, Location, Date, Population, New_Vaccinations, RollingPeopleVaccinated)
 AS
 (
@@ -139,7 +146,6 @@ WHERE dea.continent is not null
 SELECT * , (RollingPeopleVaccinated/Population)*100
 FROM PopvsVac;
 
-
 -- Using TEMP TABLES to use calculated columns with partition by
 
 DROP TABLE IF EXISTS #PercentPopulationVaccinated
@@ -153,14 +159,13 @@ Continent nvarchar(255)
 , RollingPeopleVac numeric
 )
 INSERT INTO #PercentPopulationVaccinated
-SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
-, SUM(CONVERT(int, vac.new_vaccinations)) OVER (PARTITION BY dea.location ORDER BY dea.location, dea.date) as RollingPeopleVac
+SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, SUM(CAST(vac.new_vaccinations AS int)) OVER (PARTITION BY dea.location ORDER BY dea.location, dea.date) as RollingPeopleVac
 FROM CovidDeaths dea
 JOIN CovidVaccinations vac
 	ON dea.location = vac.location
 	AND dea.date = vac.date
 WHERE dea.continent is not null
-ORDER BY 2,3
+ORDER BY 2, 3
 
 
 SELECT * , (RollingPeopleVac/Population)*100
@@ -180,4 +185,3 @@ WHERE dea.continent is not null
 
 SELECT * 
 FROM PercentPopulationVaccinated
-
