@@ -4,6 +4,12 @@
 ## Project Goal
 Looking at death rates and vaccination rates based on case numbers and population sizes.
 
+## Tableau Dashboard
+Extracted output from some SQL queries and upload them onto Tableau to create a dashboard.
+< href="https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link">
+
+[![Tableau Dashboard](https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link)](https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link)
+
 ## Dataset
 
 Source: Our World In Data 
