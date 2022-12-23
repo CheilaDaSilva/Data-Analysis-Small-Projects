@@ -1,5 +1,6 @@
 # Covid Data Exploration with SQL
-![project git banner](https://user-images.githubusercontent.com/88495091/209364818-bbcfe961-c0c5-4835-9eee-624498318f16.png)
+![project git banner](https://user-images.githubusercontent.com/88495091/209375767-3b371554-f78b-409d-9956-f1244f22d27b.png)
+
 
 ## Project Goal
 Looking at death rates and vaccination rates based on case numbers and population sizes.
