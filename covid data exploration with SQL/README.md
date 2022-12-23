@@ -8,5 +8,7 @@ Looking at death rates and vaccination rates based on case numbers and populatio
 
 Source: Our World In Data 
 
+Date range: 01 Jan 2020 - 30 Nov 2022
+
 Dataset was slipt into two datasets to practice joins in SQL and other more compleax queries.
 
