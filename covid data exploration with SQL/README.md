@@ -6,9 +6,11 @@ Looking at death rates and vaccination rates based on case numbers and populatio
 
 ## Tableau Dashboard
 Extracted output from some SQL queries and upload them onto Tableau to create a dashboard.
-< href="https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link" >
 
-[![Tableau Dashboard](https://public.tableau.com/app/profile/cheila7029/viz/CovidDashboard_16700849061050/Dashboard1)](https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link)
+[![tableau dashboard](https://user-images.githubusercontent.com/88495091/209373499-cc685178-3bac-4924-a6bb-31cc897d340d.PNG)](https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link)
+
+View: <a href="https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link"> Covid Tableau Dashboard
+  </a>
 
 ## Dataset
 
