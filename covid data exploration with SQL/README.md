@@ -11,8 +11,12 @@ Extracted output from some SQL queries and upload them onto Tableau to create a 
 
 View: <a href="https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link"> Covid Tableau Dashboard
   </a>
-  
-  <img src="https://user-images.githubusercontent.com/88495091/209373499-cc685178-3bac-4924-a6bb-31cc897d340d.PNG" data-canonical-src="https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link" width="200" height="400" />
+
+<div>
+<a href="https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link">
+  <img src="https://user-images.githubusercontent.com/88495091/209373499-cc685178-3bac-4924-a6bb-31cc897d340d.PNG" width="400" height="200" />
+</a>
+</div>
 
 ## Dataset
 
