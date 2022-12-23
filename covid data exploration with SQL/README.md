@@ -9,6 +9,13 @@ Extracted output from some SQL queries and upload them onto Tableau to create a 
 
 [![tableau dashboard](https://user-images.githubusercontent.com/88495091/209373499-cc685178-3bac-4924-a6bb-31cc897d340d.PNG)](https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link)
 
+<div id="dashboard" align="left">
+  <a href="https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link">
+    <img src=src="[![tableau dashboard](https://user-images.githubusercontent.com/88495091/209373499-cc685178-3bac-4924-a6bb-31cc897d340d.PNG)]" width="300"/>
+  </a>
+</div>
+
+
 View: <a href="https://public.tableau.com/views/CovidDashboard_16700849061050/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link"> Covid Tableau Dashboard
   </a>
 
