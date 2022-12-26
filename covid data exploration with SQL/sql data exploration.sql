@@ -1,6 +1,7 @@
 /* 
 
 COVID 19 DATA EXPLORATION
+EXPLORING DEATH AND INFECTION RATES
 
 
 Skills used: Joins, CTE's, Temp Tables, Aggregate Functions, Creating Views, Converting Data Types
