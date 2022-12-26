@@ -7,8 +7,9 @@ Skills used: Joins, CTE's, Temp Tables, Aggregate Functions, Creating Views, Con
 
 */
 
--- connect to database
+-- connect to database 
 
+-- CREATE DATABASE PortfolioProject
 USE PortfolioProject
 
 
@@ -145,6 +146,7 @@ WHERE dea.continent is not null
 
 SELECT * , (RollingPeopleVaccinated/Population)*100
 FROM PopvsVac;
+
 
 -- Using TEMP TABLES to use calculated columns with partition by
 
