@@ -25,5 +25,5 @@ For more information about the metrics and data: [covid-19-data/public/data at m
 
 Date range: 01 Jan 2020 - 30 Nov 2022
 
-- Dataset was slipt into two separate datasets (covid deaths and covid vaccinations) to practice joins in SQL and other more complex queries. Some columns from orignal source have been exluded, keeping only the main columns used in this project.
+- Dataset was slipt into two separate datasets (covid deaths and covid vaccinations) to practice joins in SQL and other more complex queries. Some columns from original source have been excluded, keeping only the main columns used in this project.
 
