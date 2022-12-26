@@ -8,8 +8,8 @@ Some short projects done to practice data exploration, cleaning and visualizatio
 
  - Looked at death and infection rates using SQL and created a Tableau dashboard from the output of some of the queries done.
  - View: [Git Folder](https://github.com/CheilaDaSilva/Data-Analysis-Small-Projects/tree/main/covid%20data%20exploration%20with%20SQL) and [Tableau Dashboard](https://public.tableau.com/app/profile/cheila7029/viz/CovidDashboard_16700849061050/Dashboard1)
- - Currently working on expanding this project: [Extended Covid Exploration Project](https://github.com/CheilaDaSilva/Covid-Data-Exploration-Extended-Project)
-
+ - Project's extended version (work in progress): [Covid Data Exploration Project - Extended](https://github.com/CheilaDaSilva/Covid-Data-Exploration-Extended-Project)
+ 
 ### Nashville Housing Data Cleaning with SQL
 
  - Populating data for NULL values; spliting columns; removing duplicates and fixing date columns.
