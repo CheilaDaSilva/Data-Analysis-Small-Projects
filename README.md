@@ -1,4 +1,7 @@
 # 💻📊 Data Analysis Projects
+
+![project git banner](https://user-images.githubusercontent.com/88495091/209565813-4abcda0f-ef74-4345-b717-0874c4840af6.png)
+
 Some short projects done to practice data exploration, cleaning and visualization.
 
 ### Covid Data Exploration with SQL & Data Visualisation with Tableau
