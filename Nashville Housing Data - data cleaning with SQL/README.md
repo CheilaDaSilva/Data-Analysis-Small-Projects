@@ -15,12 +15,6 @@ Dataset was provided by [Alex The Analyst](https://github.com/AlexTheAnalyst) as
 ## Data Cleaning with SQL
 
 ```SQL
-/*
-
-NASHVILLE HOUSING DATA CLEANING WITH SQL 
-
-*/
-
 
 -- View dataset
 
@@ -261,12 +255,7 @@ WITH RowNumCTE AS
 (
 SELECT *
 -- Partition over variable that would be unique to each row
-, ROW_NUMBER() OVER ( PARTITION BY ParcelID
-								 , PropertyAddress
-								 , SalePrice
-								 , SaleDate
-								 ,LegalReference 
-								 ORDER BY UniqueID ) as row_num
+, ROW_NUMBER() OVER ( PARTITION BY ParcelID, PropertyAddress, SalePrice, SaleDate ,LegalReference ORDER BY UniqueID ) as row_num
 FROM PortfolioProject..NashvilleHousing
 )
 
@@ -342,12 +331,7 @@ UniqueID
 ,OwnerSplitAddress
 ,OwnerSplitCity
 ,OwnerSplitState
-,ROW_NUMBER() OVER ( PARTITION BY ParcelID
-								 , PropertyAddress
-								 , SalePrice
-								 , SaleDate
-								 ,LegalReference 
-								 ORDER BY UniqueID ) as Row_Num
+,ROW_NUMBER() OVER ( PARTITION BY ParcelID, PropertyAddress, SalePrice, SaleDate ,LegalReference ORDER BY UniqueID ) as Row_Num
 FROM PortfolioProject..NashvilleHousing
 -- delete duplicates from temp table
 DELETE FROM NashvilleHousingTemp
@@ -372,87 +356,6 @@ DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate, Row_Num
 -- view cleaned dataset (as temp table)
 
 SELECT * FROM NashvilleHousingTemp
-
-
-
-----------------------------------------------------------------------------------------------------------------------------
-
-/* 
-Could also remove the unused columns and rename the ones we use when creating the temp table
-and then remove the duplicates
-*/
-
-
-DROP TABLE IF EXISTS NashvilleHousingTemp2
-CREATE TABLE NashvilleHousingTemp2
-(
-UniqueID FLOAT
-,ParcelID NVARCHAR(255)
-,LandUse NVARCHAR(255)
-,PropertyAddress NVARCHAR(255) -- split col
-,PropertyCity NVARCHAR(255) -- split col
-,SaleDate DATE -- converted sale date
-,SalePrice FLOAT
-,LegalReference NVARCHAR(255)
-,SoldAsVacant NVARCHAR(255)
-,OwnerName NVARCHAR(255) -- split col
-,OwnerAddress NVARCHAR(255) -- split col
-,OwnerCity NVARCHAR(255) -- split col
-,OwnerState NVARCHAR(255) -- split col
-,Acreage FLOAT
-,TaxDistrict NVARCHAR(255)
-,LandValue FLOAT
-,BuildingValue FLOAT
-,TotalValue FLOAT
-,YearBuilt FLOAT
-,Bedrooms FLOAT
-,FullBath FLOAT
-,HalfBath FLOAT
-,Row_Num FLOAT
-)
-
-INSERT INTO NashvilleHousingTemp2
-SELECT 
-UniqueID 
-,ParcelID
-,LandUse
-,PropertySplitAddress
-,PropertySplitCity
-,SaleDateConverted
-,SalePrice
-,LegalReference
-,SoldAsVacant
-,OwnerName
-,OwnerSplitAddress
-,OwnerSplitCity
-,OwnerSplitState
-,Acreage
-,TaxDistrict
-,LandValue
-,BuildingValue
-,TotalValue
-,YearBuilt
-,Bedrooms
-,FullBath
-,HalfBath
-,ROW_NUMBER() OVER ( PARTITION BY ParcelID
-								 , PropertyAddress
-								 , SalePrice
-								 , SaleDate
-								 ,LegalReference 
-								 ORDER BY UniqueID ) as Row_Num
-FROM PortfolioProject..NashvilleHousing
-
--- delete duplicates from temp table
-DELETE FROM NashvilleHousingTemp2
-WHERE Row_Num > 1
--- drop row num col
-ALTER TABLE NashvilleHousingTemp2
-DROP COLUMN Row_Num
-
--- view cleaned dataset
-
-SELECT * FROM NashvilleHousingTemp2
 
 
 ----------------------------------------------------------------------------------------------------------------------------
@@ -486,12 +389,7 @@ UniqueID
 ,Bedrooms
 ,FullBath
 ,HalfBath
-, ROW_NUMBER() OVER ( PARTITION BY ParcelID
-								 , PropertyAddress
-								 , SalePrice
-								 , SaleDate
-								 ,LegalReference 
-								 ORDER BY UniqueID ) as Row_Num
+, ROW_NUMBER() OVER ( PARTITION BY ParcelID , PropertyAddress , SalePrice , SaleDate ,LegalReference ORDER BY UniqueID ) as Row_Num
 FROM PortfolioProject..NashvilleHousing
 
 DELETE FROM NashHousingCleaned
