@@ -11,3 +11,12 @@ Clean a dataset using SQL:
 ## Dataset
 
 Dataset was provided by [Alex The Analyst](https://github.com/AlexTheAnalyst) as part of a guided [portfolio project series](https://github.com/AlexTheAnalyst/PortfolioProjects) 
+
+
+```SQL
+ALTER TABLE PortfolioProject..NashvilleHousing
+ADD SaleDateConverted Date
+
+UPDATE PortfolioProject..NashvilleHousing
+SET SaleDateConverted = CONVERT(Date,SaleDate)
+```
